@@ -15,15 +15,16 @@ class User {
     required this.role,
   });
 
-  static List<User> fromJsonToList(userDataJson) {
+  static List<User?> fromJsonToList(userDataJson) {
+    //print('.....................userDataJson................$userDataJson');
     var list = <User>[];
     for (var usr in userDataJson) {
       list.add(
         User(
           id: usr['id'],
           email: usr['email'],
-          firstName: usr['firstName'],
-          lastName: usr['lastName'],
+          firstName: usr['first_name'],
+          lastName: usr['last_name'],
           role: usr['role'],
           avatar: usr['avatar'],
         ),
